@@ -1,0 +1,27 @@
+{
+    "checkAcc" : "لا تمتلك حساب؟",
+    "checkAccAlready" : "لديك حساب بالفعل؟",
+    "logout" : "تسجيل الخروج",
+    "Rigester" : "إنشاء حساب",
+    "Login" : "تسجيل الدخول",
+    "entertxt" : "أدخل النص الخاص بك",
+    "Add" : "إضافة",
+    "Welcome" : "أهلا بك",
+    "Enterdata" : "أدخل بياناتك",
+    "Enterphone" : "أدخل رقم هاتفك",
+    "Enterpassword" : "أدخل كلمة المرور",
+    "Createacc" : "قم بإنشاء حساب",
+    "Registerstrat" : "قم بإنشاء حساب لنبدأ",
+    "Entername" : "أدخل اسمك",
+    "Repeatpassword" : "قم بإعادة كتابة كلمة المرور",
+    "PhoneNumber" : "رقم الهاتف",
+    "password" : "كلمة المرور",
+    "Fullname" : "الاسم الكامل",
+    "Confirmpw" : "أكد كلمة المرور",
+    "DarkMode" : "الوضع الداكن",
+    "Arabic" : "العربية",
+    "English" : "الانكليزية",
+    "Text" : "النص",
+    "Date" : "التاريخ"
+
+}
