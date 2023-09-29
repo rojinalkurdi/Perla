@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:perlatest/businesslogic/adding%20text/bloc/text_list_bloc.dart';
 import 'package:perlatest/businesslogic/bloc/app_theme_bloc.dart';
 import 'package:perlatest/presentation/consts/colors.dart';
 import 'package:perlatest/presentation/consts/localization.dart';
 import 'package:perlatest/presentation/consts/services/services.dart';
 import 'package:perlatest/presentation/widgets/custom_button.dart';
+import 'package:perlatest/presentation/widgets/text_table.dart';
 
 class HomePage extends StatelessWidget {
   final String username;
   const HomePage({super.key, required this.username});
   @override
-  
   Widget build(BuildContext context) {
-    
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
         elevation: 0.0,
         automaticallyImplyLeading: false,
         title: Container(
-          padding:const EdgeInsets.only(left: 24, top: 24),
+          padding: const EdgeInsets.only(left: 24, top: 24),
           child: Builder(builder: (context) {
             return IconButton(
                 onPressed: () {
@@ -160,6 +160,20 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 15),
                 //_______________________________________________
 
+                // BlocBuilder<TextListBloc, TextListState>(
+                //   builder: (context, state) {
+                //     if (state is TextListUpdated && state.text.isNotEmpty) {
+                //       final text = state.text;
+                //       return ListView.builder(
+                //           itemCount: text.length,
+                //           itemBuilder: (context, index) {
+                //             final text = state.text[index];
+                //             return TextTable(context, text);
+                //           });
+                //     }
+                //   },
+                // )
+
                 DataTable(columns: [
                   DataColumn(
                       label: Text(
@@ -167,14 +181,32 @@ class HomePage extends StatelessWidget {
                   DataColumn(
                       label: Text(
                           AppLocalizations.of(context)!.translate("Date"))),
+
                 ], rows: <DataRow>[
                   DataRow(cells: <DataCell>[
-                    DataCell(Text("yalli hwee")),
-                    DataCell(Text(DateTime.now().toString())),
+                    DataCell(Row(
+                      children: [
+                        Expanded(flex: 15,
+                          child: Text("yalli hwee")),
+                        Expanded(
+                          flex: 1,
+                          child: SizedBox(width: 10,))
+                      ],
+                    )),
+                    DataCell(Row(children: [
+                      Expanded(flex: 2,
+                        child: Text(DateTime.now().toString())),
+                      Expanded(flex: 1,
+                        child: SizedBox(width: 2,)),
+                      Expanded(flex: 1,
+                        child: IconButton(onPressed: (){}, icon: Icon(Icons.edit_outlined,color: Colors.blue,))),
+                      Expanded(
+                        flex: 1,
+                        child: IconButton(onPressed: (){}, icon: Icon(Icons.delete_outline_outlined,color: Colors.red)))])),
                   ])
                 ])
 
-                //_______________________________________________
+               // _______________________________________________
                 // Table(
                 //   children: const [
                 //     TableRow(
