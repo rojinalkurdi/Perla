@@ -7,11 +7,12 @@ import 'package:perlatest/presentation/consts/services/services.dart';
 import 'package:perlatest/presentation/widgets/custom_button.dart';
 
 class HomePage extends StatelessWidget {
-  final String? username;
-  const HomePage({super.key, this.username});
-
+  final String username;
+  const HomePage({super.key, required this.username});
   @override
+  
   Widget build(BuildContext context) {
+    
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
         elevation: 0.0,
         automaticallyImplyLeading: false,
         title: Container(
-          padding: EdgeInsets.only(left: 24, top: 24),
+          padding:const EdgeInsets.only(left: 24, top: 24),
           child: Builder(builder: (context) {
             return IconButton(
                 onPressed: () {
@@ -44,7 +45,7 @@ class HomePage extends StatelessWidget {
                 child: Image.asset("assets/images/Menu.png"),
               ),
               const SizedBox(height: 20),
-              Text("username"),
+              Text(username),
               const SizedBox(height: 20),
               Row(
                 children: [

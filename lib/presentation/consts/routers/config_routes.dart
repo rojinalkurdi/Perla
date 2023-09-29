@@ -23,9 +23,9 @@ class AppRoutes {
     ),
      GoRoute(
       name: ConstantRoutes.homePage,
-      path: '/home',
+      path: '/home:username',
       pageBuilder: (context, state) {
-        return MaterialPage(child: HomePage());
+        return MaterialPage(child: HomePage(username: state.pathParameters['username']!));
       },
     ),
   ]);

@@ -10,8 +10,10 @@ import '../widgets/custom_button.dart';
 import '../widgets/custom_title.dart';
 //import 'package:perlatest/presentation/widgets/custom_button.dart';
 
+// ignore: must_be_immutable
 class Register extends StatelessWidget {
-  const Register({super.key});
+   TextEditingController username = TextEditingController();
+  Register({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class Register extends StatelessWidget {
                      CustomTitle(text: AppLocalizations.of(context)!.translate("Createacc")),
                      CustomHint(text: AppLocalizations.of(context)!.translate("Registerstrat")),
                     CustomTextFormField(
+                      textController: username,
                         hintText: AppLocalizations.of(context)!.translate("Entername"),
                         icons: Icons.person_2_outlined,
                         isNumber: false,
@@ -67,7 +70,9 @@ class Register extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: CustomButton(
                             onPressed: () {
-                              GoRouter.of(context).pushNamed(ConstantRoutes.homePage);
+                              GoRouter.of(context).pushNamed(ConstantRoutes.homePage, pathParameters: {
+                                'username': username.toString()
+                              });
                             },
                             text: AppLocalizations.of(context)!.translate("Rigester"))),
                     const SizedBox(

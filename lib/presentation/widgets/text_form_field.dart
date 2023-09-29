@@ -3,6 +3,7 @@ import 'package:perlatest/presentation/consts/colors.dart';
 
 // ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
+    final TextEditingController? textController;
   final String? hintText;
   final String title;
   IconData? eyeIcon;
@@ -26,7 +27,8 @@ class CustomTextFormField extends StatelessWidget {
       required this.isNumber,
       this.obscureText,
       this.onTapIcon,
-      required this.title});
+      required this.title, 
+      this.textController});
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +41,7 @@ class CustomTextFormField extends StatelessWidget {
               style: const TextStyle(fontSize: 16, color: Colors.black)),
           const SizedBox(height: 10),
           TextFormField(
+            controller: textController,
            // onChanged: (value)=> func! (value),
             obscureText:
                 obscureText == null || obscureText == false ? false : true,

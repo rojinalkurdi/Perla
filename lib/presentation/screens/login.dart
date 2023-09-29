@@ -10,7 +10,7 @@ import '../widgets/custom_title.dart';
 import '../widgets/text_form_field.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+   Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,22 +23,29 @@ class Login extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-              child: Stack(
-                children:[ ListView(
+              child: Stack(children: [
+                ListView(
                   children: [
-                     CustomTitle(text: AppLocalizations.of(context)!.translate("Welcome")),
-                     CustomHint(text: AppLocalizations.of(context)!.translate("Enterdata")),
+                    CustomTitle(
+                        text:
+                            AppLocalizations.of(context)!.translate("Welcome")),
+                    CustomHint(
+                        text: AppLocalizations.of(context)!
+                            .translate("Enterdata")),
                     CustomTextFormField(
-                        hintText: AppLocalizations.of(context)!.translate("Enterphone"),
+                        hintText: AppLocalizations.of(context)!
+                            .translate("Enterphone"),
                         icons: Icons.phone,
                         isNumber: true,
-                        title: AppLocalizations.of(context)!.translate("PhoneNumber")),
+                        title: AppLocalizations.of(context)!
+                            .translate("PhoneNumber")),
                     CustomTextFormField(
-                      hintText: AppLocalizations.of(context)!.translate("Enterpassword"),
+                      hintText: AppLocalizations.of(context)!
+                          .translate("Enterpassword"),
                       icons: Icons.lock_outline,
                       isNumber: false,
-
-                      title: AppLocalizations.of(context)!.translate("password"),
+                      title:
+                          AppLocalizations.of(context)!.translate("password"),
                       eyeIcon: Icons.remove_red_eye_outlined,
                       onTapIcon: () {},
                     ),
@@ -47,21 +54,26 @@ class Login extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: CustomButton(
                             onPressed: () {
-                              GoRouter.of(context).pushNamed(ConstantRoutes.homePage);
+                              GoRouter.of(context)
+                                  .pushNamed(ConstantRoutes.homePage);
                             },
-                            text: AppLocalizations.of(context)!.translate("login"))),
+                            text: AppLocalizations.of(context)!
+                                .translate("login"))),
                     const SizedBox(
                       height: 10,
                     ),
                     AuthCheckText(
-                        txt: AppLocalizations.of(context)!.translate("checkAcc"),
+                        txt:
+                            AppLocalizations.of(context)!.translate("checkAcc"),
                         onTap: () {
-                          GoRouter.of(context).pushNamed(ConstantRoutes.register);
+                          GoRouter.of(context)
+                              .pushNamed(ConstantRoutes.register);
                         },
-                        inkwellText: AppLocalizations.of(context)!.translate("Rigester"))
+                        inkwellText:
+                            AppLocalizations.of(context)!.translate("Rigester"))
                   ],
                 ),
-          ]),
+              ]),
             ),
           ],
         ),

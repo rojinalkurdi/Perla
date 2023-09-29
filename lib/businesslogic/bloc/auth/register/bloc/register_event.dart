@@ -1,21 +1,13 @@
+part of 'register_bloc.dart';
+
+
 abstract class RegisterEvent {}
 
-class RegisterUsernameChanged extends RegisterEvent {
-  final String? username;
+class Register extends RegisterEvent {
+  final String username;
+  final String phonenumber;
+  final String password;
+  final String passwordconfirmation;
 
-  RegisterUsernameChanged({this.username});
+  Register(this.phonenumber, this.password, this.username, this.passwordconfirmation);
 }
-
-class RegisterphonenumberChanged extends RegisterEvent {
-  final String? phonenumber;
-
-  RegisterphonenumberChanged({this.phonenumber});
-}
-
-class RegisterPasswordChanged extends RegisterEvent {
-  final String? password;
-
-  RegisterPasswordChanged({this.password});
-}
-
-class RegisterSubmitted extends RegisterEvent {}
